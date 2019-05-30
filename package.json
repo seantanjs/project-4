@@ -1,0 +1,33 @@
+{
+  "name": "react-express-psql-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently --handle-input \"npm run server\" \"npm run client\"",
+    "server": "nodemon",
+    "initialize": "npm i && cd client && npm i && cd ../",
+    "seed": "psql -U sean -f init.sql"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "concurrently": "^4.1.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "google-maps-react": "^2.0.2",
+    "js-cookie": "^2.2.0",
+    "js-sha256": "^0.9.0",
+    "node-sass": "^4.12.0",
+    "pg": "^7.9.0",
+    "prop-types": "^15.7.2",
+    "react-google-map": "^3.1.1",
+    "react-google-maps": "^9.4.5",
+    "react-google-maps-loader": "^4.2.5",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0"
+  }
+}
