@@ -4,6 +4,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require('./db');
 
+
+// lines 8 to 11 are newly added for socket.io, yet to be experimented
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+users = [];
+connections = [];
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({
@@ -27,4 +34,6 @@ app.get('*', (request, response) => {
   response.send('Page not found');
 });
 
-const server = app.listen(PORT, () => console.log('~~~ Tuning in to the waves of port '+PORT+' ~~~'));
+// const server = app.listen(PORT, () => console.log('~~~ Tuning in to the waves of port '+PORT+' ~~~'));
+
+server.listen(PORT, () => console.log('Server running la...'));

@@ -14,6 +14,7 @@ class Row extends React.Component {
             sendInvite: false,
             acceptInvite: false,
             rejectInvite: false,
+            chatEnabled: false
         }
         this.calculateDistance = this.calculateDistance.bind(this);
         this.showModal = this.showModal.bind(this);
@@ -115,6 +116,16 @@ class Row extends React.Component {
         })
     }
 
+    chatButtonToDisplay() {
+        // this.buttonToDisplay();
+        console.log("HERE LOOK HERE!:", this.buttonToDisplay().props.children);
+        if(this.buttonToDisplay().props.children === "Accepted! 😁") {
+            return "display chat button"
+        } else {
+            return "no display chat button"
+        }
+    }
+
     buttonToDisplay() {
         console.log("ALLINVITES",this.props.allInvites);
         if(this.props.allInvites !== null) {
@@ -176,6 +187,7 @@ class Row extends React.Component {
 
   render() {
       let buttonToShow = this.buttonToDisplay();
+      let chatButton = this.chatButtonToDisplay();
           return (
               <tr>
                     <td>{this.props.index+1}</td>
@@ -191,6 +203,7 @@ class Row extends React.Component {
                         <button className="btn btn-info" onClick={this.showModal}>Click here to view photo!</button>
                     </td>
                     <td>{ buttonToShow }</td>
+                    <td>{ chatButton }</td>
                 </tr>
                );
       }

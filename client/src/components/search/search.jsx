@@ -146,7 +146,7 @@ class Search extends React.Component {
 
   render() {
       console.log('Login state', this.state.users);
-      console.log('received invites', this.state.invitesRec)
+      console.log('received invites', this.state.allInvites)
       const users = this.state.users.map( (user,index) => {
           // console.log("INSIDE MAP",user.photo);
           return   <Row user={user} index={index} userData={this.props.userData} allInvites={this.state.allInvites} />
@@ -172,6 +172,7 @@ class Search extends React.Component {
                         <td scope="col">Distance from you</td>
                         <td scope="col">View Profile</td>
                         <td scope="col">Send Invite</td>
+                        <td scope="col">Chat</td>
                     </tr>
                 </thead>
             <tbody>
