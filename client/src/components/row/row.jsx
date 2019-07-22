@@ -120,9 +120,9 @@ class Row extends React.Component {
         // this.buttonToDisplay();
         console.log("HERE LOOK HERE!:", this.buttonToDisplay().props.children);
         if(this.buttonToDisplay().props.children === "Accepted! 😁") {
-            return "display chat button"
+            return <a href="/chat" className="btn btn-danger">CHAT NOW!</a>
         } else {
-            return "no display chat button"
+            return
         }
     }
 
@@ -139,9 +139,9 @@ class Row extends React.Component {
 
             if (relevantInviteRec) {
                  if (relevantInviteRec.accept_invite == true || this.state.acceptInvite == true) {
-                   return <p style={{"font-weight":"900","font-size":"24px","color": "green"}}>Accepted! 😁</p>
+                   return <p style={{"fontWeight":"900","fontSize":"24px","color": "green"}}>Accepted! 😁</p>
                 } else if(relevantInviteRec.reject_invite == true || this.state.rejectInvite == true) {
-                    return <p style={{"font-weight":"900","font-size":"24px","color": "red"}}>Rejected! 😩</p>
+                    return <p style={{"fontWeight":"900","fontSize":"24px","color": "red"}}>Rejected! 😩</p>
                 } else {
                     return (
                         <React.Fragment>
@@ -162,9 +162,9 @@ class Row extends React.Component {
 
             if (relevantInviteSend){
                 if(relevantInviteSend.accept_invite == true) {
-                    return <p style={{"font-weight":"900","font-size":"24px","color": "green"}}>Accepted! 😁</p>
+                    return <p style={{"fontWeight":"900","fontSize":"24px","color": "green"}}>Accepted! 😁</p>
                 } else if (relevantInviteSend.reject_invite == true) {
-                    return <p style={{"font-weight":"900","font-size":"24px","color": "red"}}>Rejected! 😩</p>
+                    return <p style={{"fontWeight":"900","fontSize":"24px","color": "red"}}>Rejected! 😩</p>
                 }
                 else {
                     return (

@@ -4,6 +4,7 @@ import Login from './components/register&login/login';
 import Register from './components/register&login/register';
 import Home from './components/home/home';
 import Search from './components/search/search';
+import Chat from './components/chat/chat';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -55,6 +56,7 @@ class App extends Component {
                 <Route path="/register" component={Register}/>
                 <Route path="/home" component={()=> <Home userData={this.state} />}/>
                 <Route path="/search" component={()=><Search userData={this.state} />}/>
+                <Route path="/chat" component={()=><Chat />}/>
             </Router>
 		);
 	}

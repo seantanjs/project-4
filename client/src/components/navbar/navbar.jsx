@@ -24,7 +24,7 @@ class Navbar extends React.Component {
       <li><NavLink to="/home" className="nav-element">Home</NavLink></li>
       <li><NavLink to="/search"className="nav-element">Search Lunch Buddies</NavLink></li>
       <li><NavLink to="/login" className="nav-element">Logout</NavLink></li>
-      <li style={{ left: "150%", 'font-weight': '800', 'font-size': '24px' }}><a>{Cookies.get('username')}</a></li>
+      <li style={{ left: "150%", 'fontWeight': '800', 'fontSize': '24px' }}><a>{Cookies.get('username')}</a></li>
     </ul>
 
   </div>

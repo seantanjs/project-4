@@ -149,7 +149,7 @@ class Search extends React.Component {
       console.log('received invites', this.state.allInvites)
       const users = this.state.users.map( (user,index) => {
           // console.log("INSIDE MAP",user.photo);
-          return   <Row user={user} index={index} userData={this.props.userData} allInvites={this.state.allInvites} />
+          return   <Row key={index} user={user} index={index} userData={this.props.userData} allInvites={this.state.allInvites} />
       })
     return (
         <Layout>
@@ -159,8 +159,8 @@ class Search extends React.Component {
                           <p>Modal</p>
                           <p>Data</p>
                         </Modal>
-              <div class="tableDiv">
-              <table class="table table-striped">
+              <div className="tableDiv">
+              <table className="table table-striped">
                 <thead>
                     <tr>
                         <td scope="col">ID</td>
